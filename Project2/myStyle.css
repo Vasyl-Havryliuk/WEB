@@ -1,0 +1,82 @@
+h1{
+    text-align: center;
+}
+
+.container {
+    margin: 20px 80px;
+    max-width: 100%;
+}
+  
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+  
+.col-md {
+    flex-basis: calc(33.333% - 20px);
+    background-color: aquamarine;
+    border: 2px solid black;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+  
+.content1,
+.content2,
+.content3{
+    border: 2px solid #333;
+    border-top: none;
+    border-right: none;
+    float: right;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ 
+.content1{
+    background-color: orange;
+}
+
+.content2 {
+    background-color: rgb(216, 34, 92);
+    color: aliceblue;
+}
+
+.content3 {
+    background-color: rgb(5, 67, 73);
+    color: aqua;
+}
+
+.text1{
+    padding: 25px;
+}
+
+p{
+    margin: 5px;
+
+}
+
+@media (max-width: 768px){
+    .col-md {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .col-md {
+        flex-basis: calc(50% - 20px); /* 50% ширини рядка мінус відступ */
+    }
+    .col-md:nth-child(3) {
+        flex-basis: 100%; /* Третя колонка на всю ширину */
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md {
+        flex-basis: calc(33.333% - 20px); /* 33.333% ширини рядка мінус відступ */
+    }
+}
