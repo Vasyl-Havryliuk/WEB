@@ -73,5 +73,5 @@ function SubGenerator(numToSubtract) {
 const subFive = SubGenerator(15);
 const subTen = SubGenerator(30);
 
-console.log(subFive(10)); // Виведе: 5 (10 - 5)
-console.log(subTen(20)); // Виведе: 10 (20 - 10)
+console.log(subFive(10)); 
+console.log(subTen(20)); 
