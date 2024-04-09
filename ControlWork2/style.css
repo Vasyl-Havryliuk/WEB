@@ -1,0 +1,16 @@
+.block {
+    width: 30px;
+    height: 45px;
+    background-color: blue;
+    position: relative;
+    left: 0;
+    transition: left 0.3s ease;
+}
+  
+.block-wrapper {
+    position: relative;
+}
+  
+button {
+    margin-top: 10px;
+}
