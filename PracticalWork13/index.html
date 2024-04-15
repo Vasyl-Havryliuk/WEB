@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Work №13</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Легка гра</h1>
+    <button onclick="showDifficulty()">Вибрати рівень складності</button>
+
+    <div id="difficulty-buttons" style="display: none;">
+        <button onclick="startGame('легкий')">Легкий</button>
+        <button onclick="startGame('середній')">Середній</button>
+        <button onclick="startGame('важкий')">Важкий</button>
+    </div>
+    
+    <button onclick="showColorPicker()">Вибрати колір</button>
+    
+    <div id="color-picker-container" style="display: none;">
+        <label for="color-picker">Виберіть колір квадрата:</label>
+        <input type="color" id="color-picker" onchange="changeColor()" value="#ff0000">
+    </div>
+    
+    <div id="game-container" style="display: none;">
+        <span>Таймер: <span id="timer">0</span> сек.</span><br>
+        <span>Бали: <span id="score">0</span></span><br>
+        <div id="block" class="block"></div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
