@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Work №11</title>
+</head>
+<body>
+    <h1>Практична робота №11 Гаврилюка Василя Васильовича </h1>
+    <script src="script.js"></script>
+    <script>
+    const array = [97, 83, 100, 44, 12, 72, 38, 19, 61, 28, 94, 6, 76, 33, 2, 54, 47, 69, 81, 15, 52, 10, 91, 25, 64, 4, 78, 56, 36, 99, 8, 70, 42, 22, 89, 59, 16, 86, 31, 7, 58, 93, 49, 77, 39, 20, 68, 1, 87, 26, 63, 5, 79, 60, 37, 92, 17, 43, 74, 46, 13, 95, 27, 71, 14, 82, 50, 32, 90, 3, 55, 45, 80, 18, 67, 30, 62, 9, 88, 21, 75, 41, 11, 84, 29, 66, 35, 98, 24, 73, 40, 85, 48, 65, 34, 96, 23, 57];
+    
+    SortingLibrary.exchangeSort([...array], 'asc');
+    SortingLibrary.exchangeSort([...array], 'desc');
+
+    SortingLibrary.selectionSort([...array], 'asc');
+    SortingLibrary.selectionSort([...array], 'desc');
+
+    SortingLibrary.insertionSort([...array], 'asc');
+    SortingLibrary.insertionSort([...array], 'desc');
+
+    SortingLibrary.shellSort([...array], 'asc');
+    SortingLibrary.shellSort([...array], 'desc');
+
+    SortingLibrary.quickSort([...array], 'asc');
+    SortingLibrary.quickSort([...array], 'desc');
+    </script>
+</body>
+</html>
