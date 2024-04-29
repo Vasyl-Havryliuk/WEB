@@ -63,10 +63,12 @@ async function newGame() {
 
 // Функція для рестарту поточної гри
 function restart() {
-    grid = null; // Змінна grid повинна бути занулена, щоб знову створити поле гри
-    newGame(); // Викликаємо функцію newGame() для створення нової гри
+    renderGrid(grid);
+    steps = 0;
+    updateSteps();
+    startTime = Date.now();
+    updateTimer();
 }
-
 // Функція для оновлення лічильника кроків
 function updateSteps() {
     document.getElementById('steps').textContent = ++steps;
