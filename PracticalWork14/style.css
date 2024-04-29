@@ -1,0 +1,50 @@
+/* Загальні стилі сторінки */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f0; /* Світлий зелений фон */
+    color: #003300; /* Темно-зелений колір тексту */
+    margin: 0;
+    padding: 0;
+}
+
+/* Стилі для кнопок */
+button {
+    background-color: #4CAF50; /* Зелений колір кнопки */
+    color: white; /* Білий колір тексту кнопки */
+    padding: 10px 20px; /* Відступи внутрішні */
+    border: none; /* Відсутність рамки */
+    cursor: pointer; /* Змінна вказівника при наведенні */
+    border-radius: 5px; /* Закруглені кути */
+}
+
+/* Стилі для клітинок поля гри */
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: #7CFC00;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid #003300; /* Додана рамка */
+    margin: 0; /* Відсутність відступів */
+}
+
+/* Стилі для вимкнутих клітинок поля гри */
+.cell.off {
+    background-color: #003300;
+}
+
+/* Стилі для увімкнутих клітинок поля гри */
+.cell.on {
+    background-color: #4CAF50;
+}
+
+/* Стилі для поля гри */
+.field {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Стилі для рядка клітинок */
+.row {
+    line-height: 0; /* Відсутність висоти між рядками */
+}
