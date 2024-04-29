@@ -2,7 +2,7 @@
 #game-controls button {
     margin-right: 10px; /* Відступ між кнопками */
     background-color: darkgreen; /* Колір фону для кнопок */
-    color: white; /* Колір тексту для кнопок */
+    color: blue; /* Колір тексту для кнопок */
     border: none; /* Видаляємо границю */
     padding: 10px 20px; /* Внутрішній відступ */
     border-radius: 5px; /* Закруглені кути */
