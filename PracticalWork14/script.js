@@ -158,10 +158,28 @@ const setGameTarget = (target) => {
 };
 
 // Функція для завантаження гри з JSON-файлу
-const loadGameFromJson = async ("game.json") => {
+const loadGameFromJson = async () => {
     try {
         const response = await fetch("game.json"); // Відправлення запиту на сервер за JSON-файлом
-        const { target, fieldPattern } = await response.json(); // Отримання даних з JSON-файлу
+        const data = await response.json(); // Отримання даних з JSON-файлу
+        const gameData = data.game; // Отримання гри з даних
+        // Вибір випадкової гри з масиву
+        const randomGameIndex = Math.floor(Math.random() * gameData.length);
+        const { target, a, b, c } = gameData[randomGameIndex]; // Отримання випадкової гри
+        let fieldPattern;
+        switch (randomGameIndex) {
+            case 0:
+                fieldPattern = a;
+                break;
+            case 1:
+                fieldPattern = b;
+                break;
+            case 2:
+                fieldPattern = c;
+                break;
+            default:
+                fieldPattern = a;
+        }
         startGame({ target, fieldPattern }); // Початок гри з отриманими даними
     } catch (error) {
         console.log(error); // Обробка помилок
@@ -171,5 +189,5 @@ const loadGameFromJson = async ("game.json") => {
 // Обробник кліку кнопки початку гри
 const startButton = document.getElementById("start-btn"); // Отримання кнопки початку гри
 startButton.addEventListener("click", () => { // Додавання обробника події для клікання на кнопку
-    loadGameFromJson("game.json"); // Завантаження гри з JSON-файлу
+    loadGameFromJson(); // Завантаження гри з JSON-файлу
 });
