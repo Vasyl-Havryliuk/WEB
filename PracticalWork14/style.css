@@ -1,4 +1,20 @@
-h1 {
-    text-align: center;
-    margin-top: 50px; /* Додайте відступ зверху, якщо потрібно */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#game-container {
+    margin-top: 20px; /* Відступ між заголовком та полем гри */
+}
+
+.other-elements {
+    margin-top: 20px; /* Відступ між полем гри та іншими елементами */
 }
