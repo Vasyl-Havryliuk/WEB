@@ -5,9 +5,7 @@ async function loadGridFromJSON() {
         const data = await response.json();
         // Випадково виберемо одне з полів
         const randomGame = data.game[Math.floor(Math.random() * data.game.length)];
-        const grid = Object.values(randomGame)[0]; // Отримуємо значення гри
-        const target = randomGame.target; // Отримуємо значення target
-        return { grid, target }; // Повертаємо об'єкт з grid та target
+        return randomGame;
     } catch (error) {
         console.error('Помилка завантаження гри з JSON:', error);
     }
