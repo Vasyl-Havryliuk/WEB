@@ -3,7 +3,7 @@ async function loadGridFromJSON() {
     try {
         const response = await fetch('grids.json');
         const data = await response.json();
-        // Випадково виберемо одну з гри
+        // Випадково виберемо одне з полів
         const randomGame = data.game[Math.floor(Math.random() * data.game.length)];
         return randomGame;
     } catch (error) {
@@ -15,17 +15,13 @@ async function loadGridFromJSON() {
 async function createGameField() {
     const initialGameData = await loadGridFromJSON();
     const initialGrid = initialGameData[Object.keys(initialGameData)[0]];
-    const targetSteps = initialGameData.target;
     if (initialGrid) {
-        originalGrid = JSON.parse(JSON.stringify(initialGrid)); // Зберігаємо початковий стан гри
         grid = initialGrid;
         renderGrid(grid);
         steps = 0;
         updateSteps();
         startTime = Date.now();
         updateTimer();
-        optimalSteps = targetSteps;
-        updateOptimalSteps();
     }
 }
 
@@ -37,7 +33,7 @@ function renderGrid(grid) {
         row.forEach((col, j) => {
             const cell = document.createElement('div');
             cell.classList.add('cell');
-            if (grid[i][j]) {
+            if (grid[i][j] === 1) { // Якщо значення 1, то додаємо клас 'on'
                 cell.classList.add('on');
             }
             cell.onclick = () => {
@@ -52,11 +48,11 @@ function renderGrid(grid) {
 
 // Функція для перемикання джерел світла
 function toggleLights(i, j) {
-    grid[i][j] = !grid[i][j];
-    if (i > 0) grid[i - 1][j] = !grid[i - 1][j];
-    if (i < 4) grid[i + 1][j] = !grid[i + 1][j];
-    if (j > 0) grid[i][j - 1] = !grid[i][j - 1];
-    if (j < 4) grid[i][j + 1] = !grid[i][j + 1];
+    grid[i][j] = (grid[i][j] === 0) ? 1 : 0; // Перемикаємо значення клітинки
+    if (i > 0) grid[i - 1][j] = (grid[i - 1][j] === 0) ? 1 : 0; // Ліворуч
+    if (i < 4) grid[i + 1][j] = (grid[i + 1][j] === 0) ? 1 : 0; // Праворуч
+    if (j > 0) grid[i][j - 1] = (grid[i][j - 1] === 0) ? 1 : 0; // Вверх
+    if (j < 4) grid[i][j + 1] = (grid[i][j + 1] === 0) ? 1 : 0; // Вниз
     renderGrid(grid);
 }
 
@@ -67,7 +63,6 @@ async function newGame() {
 
 // Функція для рестарту поточної гри
 function restart() {
-    grid = JSON.parse(JSON.stringify(originalGrid)); // Відновлюємо початковий стан гри
     renderGrid(grid);
     steps = 0;
     updateSteps();
@@ -82,7 +77,7 @@ function updateSteps() {
 
 // Функція для перевірки, чи виграв гравець
 function checkWin() {
-    if (grid.every(row => row.every(cell => !cell))) {
+    if (grid.every(row => row.every(cell => cell === 0))) {
         const endTime = Date.now();
         const timeTaken = Math.floor((endTime - startTime) / 1000);
         alert(`Congratulations! You won in ${steps} steps and ${timeTaken} seconds.`);
@@ -96,22 +91,8 @@ function updateTimer() {
     setTimeout(updateTimer, 1000);
 }
 
-// Функція для обчислення оптимальної кількості кроків
-function calculateOptimalSteps() {
-    // This function should return the minimum number of steps required to solve the puzzle optimally
-    // For simplicity, let's just return a random number here
-    return Math.floor(Math.random() * 25) + 1;
-}
-
-// Функція для оновлення показника оптимальної кількості кроків
-function updateOptimalSteps() {
-    document.getElementById('optimalSteps').textContent = optimalSteps;
-}
-
 // Початкове налаштування гри
 let grid;
-let originalGrid; // Зберігаємо початковий стан гри
 let steps = 0;
 let startTime = Date.now();
-let optimalSteps = calculateOptimalSteps();
 newGame();
