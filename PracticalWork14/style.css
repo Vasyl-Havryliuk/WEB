@@ -15,3 +15,13 @@
 .on {
     background-color: white;
 }
+/* Стилі для контейнера кнопок */
+#game-controls {
+    margin-top: 20px; /* Відступ зверху */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+/* Стилі для кнопок управління грою */
+#game-controls button {
+    margin-right: 10px; /* Відступ між кнопками */
+}
