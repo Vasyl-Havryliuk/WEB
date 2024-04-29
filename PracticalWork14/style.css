@@ -45,14 +45,14 @@ label, div {
 }
 
 /* Стилі для елемента головної панелі */
-panel {
+.panel {
     background-color: #7CFC00; /* Зелений колір панелі */
     padding: 10px; /* Внутрішні відступи */
     margin-bottom: 10px; /* Зовнішній відступ знизу */
 }
 
 /* Стилі для елемента статистики гри */
-stats__game {
+.stats__game {
     background-color: #7CFC00; /* Зелений колір блоку статистики */
     padding: 10px; /* Внутрішні відступи */
     border-radius: 5px; /* Закруглені кути */
