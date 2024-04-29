@@ -1,15 +1,1 @@
-/* Стилі для кнопок управління грою */
-#game-controls button {
-    margin-right: 10px; /* Відступ між кнопками */
-    background-color: darkgreen; /* Колір фону для кнопок */
-    color: blue; /* Колір тексту для кнопок */
-    border: none; /* Видаляємо границю */
-    padding: 10px 20px; /* Внутрішній відступ */
-    border-radius: 5px; /* Закруглені кути */
-    cursor: pointer; /* Змінюємо курсор при наведенні на кнопку */
-}
 
-/* Стилі для кнопок управління грою при наведенні */
-#game-controls button:hover {
-    background-color: limegreen; /* Колір фону для кнопок при наведенні */
-}
