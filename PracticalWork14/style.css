@@ -6,11 +6,3 @@ body {
     height: 100vh;
     margin: 0;
 }
-
-h1 {
-    margin-bottom: 20px; /* Відступ знизу для заголовка */
-}
-
-.centered-container {
-    text-align: center; /* Вирівнюємо текст всередині контейнера по центру */
-}
