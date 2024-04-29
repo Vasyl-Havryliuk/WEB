@@ -1,17 +1,15 @@
-.container {
-    display: grid;
-    grid-template-columns: repeat(5, 40px);
-    grid-template-rows: repeat(5, 40px);
-    gap: 2px;
+/* Стилі для кнопок управління грою */
+#game-controls button {
+    margin-right: 10px; /* Відступ між кнопками */
+    background-color: darkgreen; /* Колір фону для кнопок */
+    color: white; /* Колір тексту для кнопок */
+    border: none; /* Видаляємо границю */
+    padding: 10px 20px; /* Внутрішній відступ */
+    border-radius: 5px; /* Закруглені кути */
+    cursor: pointer; /* Змінюємо курсор при наведенні на кнопку */
 }
 
-.cell {
-    width: 40px;
-    height: 40px;
-    background-color: gray;
-    border: 1px solid black;
-}
-
-.on {
-    background-color: white;
+/* Стилі для кнопок управління грою при наведенні */
+#game-controls button:hover {
+    background-color: limegreen; /* Колір фону для кнопок при наведенні */
 }
