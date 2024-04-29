@@ -93,6 +93,8 @@ function updateTimer() {
 
 // Початкове налаштування гри
 let grid;
+let originalGrid; // Зберігаємо початковий стан гри
 let steps = 0;
 let startTime = Date.now();
+let optimalSteps = calculateOptimalSteps();
 newGame();
