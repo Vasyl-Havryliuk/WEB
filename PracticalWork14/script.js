@@ -1,5 +1,7 @@
 // Глобальні змінні для таймера, відстеження часу та кількості ходів
-let timer, time, movesCount = 0;
+let timer; 
+let time; 
+let movesCount = 0;
 // Функція для початку гри
 const startGame = ({ target, fieldPattern }) => {
     movesCount = 0; // Скидання лічильника ходів
