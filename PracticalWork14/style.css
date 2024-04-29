@@ -1,60 +1,51 @@
-/* Загальні стилі сторінки */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8f0; /* Світлий зелений фон */
-    color: #003300; /* Темно-зелений колір тексту */
+    background-color: #f0f8f0;
+    color: #003300; 
     margin: 0;
     padding: 0;
 }
 
-/* Стилі для кнопок */
 button {
-    background-color: #4CAF50; /* Зелений колір кнопки */
-    color: white; /* Білий колір тексту кнопки */
-    padding: 10px 20px; /* Відступи внутрішні */
-    border: none; /* Відсутність рамки */
-    cursor: pointer; /* Змінна вказівника при наведенні */
-    border-radius: 5px; /* Закруглені кути */
-}
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
 
-/* Стилі для контейнера гри */
 #field-cont {
-    display: grid; /* Використання сітки для розташування елементів */
-    grid-template-columns: repeat(5, 1fr); /* 5 стовпців однакової ширини */
-    gap: 10px; /* Відступи між елементами */
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px; 
 }
 
-/* Стилі для клітинок поля гри */
 .cell {
-    width: 50px; /* Ширина клітинки */
-    height: 50px; /* Висота клітинки */
-    background-color: #7CFC00; /* Зелений колір клітинки */
-    border-radius: 5px; /* Закруглені кути */
-    cursor: pointer; /* Змінна вказівника при наведенні */
+    width: 50px; 
+    height: 50px;
+    background-color: #7CFC00;
+    border-radius: 5px;
+    cursor: pointer; 
 }
 
-/* Стилі для текстових елементів */
 label, div {
-    color: #003300; /* Темно-зелений колір тексту */
-    margin-bottom: 5px; /* Відступ знизу */
+    color: #003300; 
+    margin-bottom: 5px; 
 }
 
-/* Стилі для інформації про таймер, кількість ходів та ціль гри */
 #timer, #moves, #target {
-    font-weight: bold; /* Напівжирний шрифт */
+    font-weight: bold; 
 }
 
-/* Стилі для елемента головної панелі */
 .panel {
-    background-color: #7CFC00; /* Зелений колір панелі */
-    padding: 10px; /* Внутрішні відступи */
-    margin-bottom: 10px; /* Зовнішній відступ знизу */
+    background-color: #7CFC00; 
+    padding: 10px;
+    margin-bottom: 10px; 
 }
 
-/* Стилі для елемента статистики гри */
 .stats__game {
-    background-color: #7CFC00; /* Зелений колір блоку статистики */
-    padding: 10px; /* Внутрішні відступи */
-    border-radius: 5px; /* Закруглені кути */
-    margin-bottom: 20px; /* Зовнішній відступ знизу */
+    background-color: #7CFC00; 
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
