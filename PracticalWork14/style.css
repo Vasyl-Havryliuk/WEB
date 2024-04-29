@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(5, 40px);
     grid-template-rows: repeat(5, 40px);
-    gap: 2px;
+    gap: 50px;
 }
 
 .cell {
@@ -13,15 +13,4 @@
 }
 
 .on {
-    background-color: orange;
-}
-/* Стилі для контейнера кнопок */
-#game-controls {
-    margin-top: 20px; /* Відступ зверху */
-    margin-bottom: 20px; /* Відступ знизу */
-}
-
-/* Стилі для кнопок управління грою */
-#game-controls button {
-    margin-right: 10px; /* Відступ між кнопками */
-}
+    background-color: white;
