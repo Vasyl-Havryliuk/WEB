@@ -69,6 +69,7 @@ function restart() {
     startTime = Date.now();
     updateTimer();
 }
+
 // Функція для оновлення лічильника кроків
 function updateSteps() {
     document.getElementById('steps').textContent = ++steps;
