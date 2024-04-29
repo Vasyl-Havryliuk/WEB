@@ -3,9 +3,8 @@ async function loadGridFromJSON() {
     try {
         const response = await fetch('grids.json');
         const data = await response.json();
-        console.log(data); // Виводимо дані з JSON-файлу на консоль для перевірки
+        // Випадково виберемо одну з гри
         const randomGame = data.game[Math.floor(Math.random() * data.game.length)];
-        console.log(randomGame); // Виводимо випадкову гру на консоль для перевірки
         return randomGame;
     } catch (error) {
         console.error('Помилка завантаження гри з JSON:', error);
@@ -18,6 +17,7 @@ async function createGameField() {
     const initialGrid = initialGameData[Object.keys(initialGameData)[0]];
     const targetSteps = initialGameData.target;
     if (initialGrid) {
+        originalGrid = JSON.parse(JSON.stringify(initialGrid)); // Зберігаємо початковий стан гри
         grid = initialGrid;
         renderGrid(grid);
         steps = 0;
@@ -67,6 +67,7 @@ async function newGame() {
 
 // Функція для рестарту поточної гри
 function restart() {
+    grid = JSON.parse(JSON.stringify(originalGrid)); // Відновлюємо початковий стан гри
     renderGrid(grid);
     steps = 0;
     updateSteps();
@@ -109,6 +110,7 @@ function updateOptimalSteps() {
 
 // Початкове налаштування гри
 let grid;
+let originalGrid; // Зберігаємо початковий стан гри
 let steps = 0;
 let startTime = Date.now();
 let optimalSteps = calculateOptimalSteps();
