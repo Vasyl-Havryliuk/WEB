@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>Lights out</h1>
-    <div class="container" id="container"></div>
-    <div>
-        <button onclick="newGame()">New Game</button>
-        <button onclick="restart()">Restart</button>
-        <span>Steps: <span id="steps">0</span></span>
-        <span>Time: <span id="timer">0</span> seconds</span>
-        <span>Optimal Steps: <span id="optimalSteps">0</span></span>
+     <div class="container">
+        <h1>Lights Out</h1>
+        <div class="game-area" id="container">
+            <!-- Ось тут буде розміщено поле гри -->
+        </div>
+        <div id="game-controls">
+            <button onclick="newGame()">New Game</button>
+            <button onclick="restart()">Restart</button>
+            <div class="info">
+                <span>Steps: <span id="steps">0</span></span>
+                <span>Time: <span id="timer">0</span> seconds</span>
+                <span>Optimal Steps: <span id="optimalSteps">0</span></span>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
