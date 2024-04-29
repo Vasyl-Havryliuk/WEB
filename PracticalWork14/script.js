@@ -158,9 +158,9 @@ const setGameTarget = (target) => {
 };
 
 // Функція для завантаження гри з JSON-файлу
-const loadGameFromJson = async (jsonUrl) => {
+const loadGameFromJson = async ("game.json") => {
     try {
-        const response = await fetch(jsonUrl); // Відправлення запиту на сервер за JSON-файлом
+        const response = await fetch("game.json"); // Відправлення запиту на сервер за JSON-файлом
         const { target, fieldPattern } = await response.json(); // Отримання даних з JSON-файлу
         startGame({ target, fieldPattern }); // Початок гри з отриманими даними
     } catch (error) {
