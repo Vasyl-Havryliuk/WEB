@@ -73,11 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function checkWin(fieldPattern) {
-        const flattenedField = fieldPattern.flat();
-        const totalOn = flattenedField.filter(cell => cell).length;
-        const target = parseInt(targetDisplay.textContent);
+        const allOff = fieldPattern.every(row => row.every(cell => !cell));
 
-        if (totalOn === target) {
+        if (allOff) {
             clearInterval(timerInterval);
             alert('Вітаю! Ви перемогли!');
         }
@@ -94,11 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function restartGame() {
-        clearInterval(timerInterval); 
-        timerDisplay.textContent = '0'; 
-        movesCount = 0; 
-        updateMovesDisplay(); 
-        renderField(initialFieldPattern); // Перемальовуємо поле гри з початковим шаблоном
+        clearInterval(timerInterval); // Зупинити таймер
+        timerDisplay.textContent = '0';
+        movesCount = 0;
+        updateMovesDisplay();
     }
-    
 });
